@@ -74,7 +74,15 @@ STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Allow React dev server (default 3000) to access API
-CORS_ALLOW_ALL_ORIGINS = os.environ.get("CORS_ALLOW_ALL_ORIGINS", "True") == "True"
+CORS_ALLOW_ALL_ORIGINS = os.environ.get(
+    "CORS_ALLOW_ALL_ORIGINS",
+    "False"
+) == "True"
+
+CORS_ALLOWED_ORIGINS = [
+    "https://admin.duraprotect.tn",
+]
+
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
